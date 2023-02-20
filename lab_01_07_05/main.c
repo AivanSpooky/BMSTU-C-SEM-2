@@ -7,7 +7,7 @@
 
 double func_f(double x)
 {
-    return 1/(sqrt(1-(x*x)));
+    return 1 / (sqrt(1 - (x * x)));
 }
 
 double func_s(double x, double eps)
@@ -52,5 +52,4 @@ int main(void)
     printf("%f\n%f\n%f\n%f\n", func_real, func_eps, abs_err, rel_err);
 
     return OK;
-
 }
