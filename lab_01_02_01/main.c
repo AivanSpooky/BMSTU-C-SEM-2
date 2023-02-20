@@ -9,7 +9,7 @@
 
 int main(void)
 {
-    double M_PI = 3.14159265358979323846264338327950288;
+    double m_pi = 3.14159265358979323846264338327950288;
     double a, b;
     double phi;
     
@@ -36,7 +36,7 @@ int main(void)
         return ERR_ANGLE;
     }
 
-    double s = fabs(a * a - b * b) / 2 * tanf((phi * M_PI / 180));
+    double s = fabs(a * a - b * b) / 2 * tan((phi * m_pi / 180));
 
     printf("S = %f\n", s);
 
