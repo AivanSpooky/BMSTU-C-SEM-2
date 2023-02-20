@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define EPS 1e-3
+#define EPS 0.001
 #define OK 0
 #define ERR_INCORRECT_INPUT 1
 #define ERR_SAME_DOTS 2
