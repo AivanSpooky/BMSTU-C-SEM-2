@@ -36,7 +36,7 @@ int main(void)
         return ERR_ANGLE;
     }
 
-    double s = (a + b) / 2 * fabs(b - a) / 2 * tan((phi * M_PI / 180));
+    double s = (a + b) / 2 * fabs(b - a) / 2 * tanf((phi * M_PI / 180));
 
     printf("S = %f\n", s);
 
