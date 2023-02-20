@@ -27,8 +27,7 @@ int main(void)
         }
     }
 
-    printf("%f", sinf(sum));
+    printf("%f\n", sinf(sum));
 
     return OK;
-
 }
