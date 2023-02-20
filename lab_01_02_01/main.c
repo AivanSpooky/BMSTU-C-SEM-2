@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-#define M_PI 3.14159265358979323846264338327950288
 #define OK 0
 #define ERR_IO 1
 #define ERR_NEG 2
@@ -10,6 +9,7 @@
 
 int main(void)
 {
+    double M_PI = 3.14159265358979323846264338327950288;
     double a, b;
     double phi;
     

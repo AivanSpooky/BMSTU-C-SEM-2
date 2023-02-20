@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-#define EPS 0.001
 #define OK 0
 #define ERR_INCORRECT_INPUT 1
 #define ERR_SAME_DOTS 2
@@ -13,6 +12,7 @@ double find_line_coefficients(double x1, double y1, double x2, double y2)
 
 int main(void)
 {
+    double EPS = 0.001;
     double x_p, y_p;
     double x_q, y_q;
     double x_r, y_r;
