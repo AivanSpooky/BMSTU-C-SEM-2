@@ -8,7 +8,7 @@
 int degree_of_10(int degree)
 {
     int result = 1;
-    for (int i=0; i<degree; i++)
+    for (int i = 0; i < degree; i++)
     {
         result *= 10;
     }
@@ -44,7 +44,7 @@ int main(void)
     {
         i--;
         power_of_ten = degree_of_10(i);
-        printf("%d", (n/power_of_ten)%10);
+        printf("%d", (n / power_of_ten) % 10);
     }
     printf("\n");
 

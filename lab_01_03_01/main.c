@@ -17,14 +17,14 @@ int main(void)
         printf("IO error!");
         return ERR_IO;
     }
-    else if (v1<0 || v2<0)
+    else if (v1 < 0 || v2 < 0)
     {
         printf("Объем не может быть отрицательным!\n");
         return ERR_NEG;
     }
 
-    double v = v1+v2;
-    double t = (v1*t1+v2*t2)/(v1+v2);
+    double v = v1 + v2;
+    double t = (v1 * t1 + v2 * t2) / (v1 + v2);
 
     printf("Общий объем V = %f\nТемпература T = %f\n", v, t);
 

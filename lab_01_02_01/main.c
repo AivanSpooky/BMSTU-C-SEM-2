@@ -20,7 +20,7 @@ int main(void)
         printf("IO error!");
         return ERR_IO;
     }
-    else if (a<=0 || b<=0)
+    else if (a <= 0 || b <= 0)
     {
         printf("Основание трапеции не может быть нулевым или отрицательным!\n");
         return ERR_NEG;
@@ -30,13 +30,13 @@ int main(void)
         printf("Основания трапеции не могут быть одинаковыми!\n");
         return ERR_BASE;
     }
-    else if (phi<=0 || phi>=90)
+    else if (phi <= 0 || phi >= 90)
     {
         printf("Угол должен быть острым!\n");
         return ERR_ANGLE;
     }
 
-    double s = (a+b)/2*fabs(b-a)/2*tan((phi*M_PI/180));
+    double s = (a + b) / 2 * fabs(b - a) / 2 * tan((phi * M_PI / 180));
 
     printf("S = %f\n", s);
 

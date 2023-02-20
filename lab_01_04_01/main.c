@@ -21,8 +21,8 @@ int main(void)
         return ERR_ZERO;
     }
 
-    int entrance = ((flat_num-1) / (9*4))+1;
-    int floor = ((flat_num - (entrance-1)*36 - 1)/4)+1;
+    int entrance = ((flat_num - 1) / (9 * 4)) + 1;
+    int floor = ((flat_num - (entrance - 1) * 36 - 1) / 4) + 1;
 
     printf("Номер подъезда = %d\nЭтаж = %d\n", entrance, floor);
 
