@@ -6,7 +6,7 @@
 #define ERR_INCORRECT_INPUT 1
 #define ERR_SAME_DOTS 2
 
-int find_line_coefficients(int x1, int y1, int x2, int y2)
+double find_line_coefficients(double x1, double y1, double x2, double y2)
 {
     return (y2 - y1) / (x2 - x1), y1 - (y2 - y1) / (x2 - x1) * x1;
 }
