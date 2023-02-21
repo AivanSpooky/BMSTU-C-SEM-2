@@ -9,7 +9,7 @@
 
 int main(void)
 {
-    double m_pi = 3.14159265358979323846264338327950288;
+    double m_pi = 3.141592;
     double a, b;
     double phi;
     
@@ -38,7 +38,7 @@ int main(void)
 
     double s = fabs(a * a - b * b) / 2 * tan((phi * m_pi / 180));
 
-    printf("S = %f\n", s);
+    printf("S = %.6f\n", s);
 
     return OK;
 }
