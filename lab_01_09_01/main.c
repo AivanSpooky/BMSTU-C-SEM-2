@@ -10,7 +10,6 @@ int main(void)
     double cur_x = 0;
     int n = 1;
     double sum = 0;
-    int elem_count = 0;
     
     while (n > 0)
     {
@@ -28,12 +27,12 @@ int main(void)
         }
         else
         {
-            sum += sqrtf(cur_x / n);
+            sum += sqrt(cur_x / n);
             n++;
         }
     }
 
-    printf("%f\n", sinf(sum));
+    printf("%f\n", sin(sum));
 
     return OK;
 }
