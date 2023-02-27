@@ -46,7 +46,6 @@ int main(void)
         tmp = y_q;
         y_q = y_p;
         y_p = tmp;
-        printf("%f  %f", x_p, x_q);
     }
     if (x_r > x_s)
     {
@@ -83,7 +82,6 @@ int main(void)
     double b1 = find_line_coefficients_b(x_p, y_p, x_q, y_q);
     double k2 = find_line_coefficients_k(x_r, y_r, x_s, y_s);
     double b2 = find_line_coefficients_b(x_r, y_r, x_s, y_s);
-    printf("%lf %lf - %lf %lf\n", k1, b1, k2, b2);
     if (fabs(k1 - k2) < eps)
     {
         if (fabs(b1 - b2) < eps)
@@ -98,7 +96,6 @@ int main(void)
         }
     }
     double x_cross = (b2 - b1) / (k1 - k2);
-    printf("%lf - %lf %lf - %lf %lf\n", x_cross, x_p, x_q, x_r, x_s);
     if ((x_cross <= x_q && x_cross >= x_p) && (x_cross <= x_s && x_cross >= x_r))
     {
         printf("1\n");
