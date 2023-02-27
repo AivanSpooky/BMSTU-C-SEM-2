@@ -18,7 +18,7 @@ double find_line_coefficients_b(double x1, double y1, double x2, double y2)
 
 int main(void)
 {
-    double eps = 0.0000001;
+    double eps = 0.0001;
     double x_p, y_p;
     double x_q, y_q;
     double x_r, y_r;
@@ -28,6 +28,11 @@ int main(void)
     {
         printf("Неверный ввод!");
         return ERR_INCORRECT_INPUT;
+    }
+    else if (((fabs(x_p - x_q) < eps) && (fabs(y_p - y_q) < eps)) || ((fabs(x_r - x_s) < eps) && (fabs(y_r - y_s) < eps)))
+    {
+        printf("У одного из отрезков концы имеют одинаковые координаты!\n");
+        return ERR_SAME_DOTS;
     }
 
     double tmp;
@@ -57,12 +62,12 @@ int main(void)
     {
         if (fabs(x_p - x_r) < eps)
         {
-            printf("0\n");
+            printf("1\n");
             return OK;
         }
         else
         {
-            printf("1\n");
+            printf("0\n");
             return OK;
         }
     }
@@ -78,20 +83,22 @@ int main(void)
     double b1 = find_line_coefficients_b(x_p, y_p, x_q, y_q);
     double k2 = find_line_coefficients_k(x_r, y_r, x_s, y_s);
     double b2 = find_line_coefficients_b(x_r, y_r, x_s, y_s);
+    printf("%lf %lf - %lf %lf\n", k1, b1, k2, b2);
     if (fabs(k1 - k2) < eps)
     {
         if (fabs(b1 - b2) < eps)
         {
-            printf("0\n");
+            printf("1\n");
             return OK;
         }
         else
         {
-            printf("1\n");
+            printf("0\n");
             return OK;
         }
     }
     double x_cross = (b2 - b1) / (k1 - k2);
+    printf("%lf - %lf %lf - %lf %lf\n", x_cross, x_p, x_q, x_r, x_s);
     if ((x_cross <= x_q && x_cross >= x_p) && (x_cross <= x_s && x_cross >= x_r))
     {
         printf("1\n");
