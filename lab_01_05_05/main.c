@@ -7,7 +7,7 @@
 
 int degree_of_10(int degree)
 {
-    int result = 1;
+    long long int result = 1;
     for (int i = 0; i < degree; i++)
     {
         result *= 10;
