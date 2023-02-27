@@ -8,26 +8,26 @@
 
 int intersect(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4)
 {
-    double ABx, ABy, ACx, ACy, ADx, ADy;
-    double CAx, CAy, CBx, CBy, CDx, CDy;
-    double ACxAB, ADxAB, CAxCD, CBxCD;
-    ACx = x3 - x1;
-    ACy = y3 - y1;
-    ABx = x2 - x1;
-    ABy = y2 - y1;
-    ADx = x4 - x1;
-    ADy = y4 - y1;
-    CAx = x1 - x3;
-    CAy = y1 - y3;
-    CBx = x2 - x3;
-    CBy = y2 - y3;
-    CDx = x4 - x3;
-    CDy = y4 - y3;
-    ACxAB = ACx * ABy - ACy * ABx;
-    ADxAB = ADx * ABy - ADy * ABx;
-    CAxCD = CAx * CDy - CAy * CDx;
-    CBxCD = CBx * CDy - CBy * CDx;
-    if ((ACxAB * ADxAB < 0) && (CAxCD * CBxCD < 0))
+    double ab_x, ab_y, ac_x, ac_y, ad_x, ad_y;
+    double ca_x, ca_y, cb_x, cb_y, cd_x, cd_y;
+    double ac_x_ab, ad_x_ab, ca_x_cd, cb_x_cd;
+    ac_x = x3 - x1;
+    ac_y = y3 - y1;
+    ab_x = x2 - x1;
+    ab_y = y2 - y1;
+    ad_x = x4 - x1;
+    ad_y = y4 - y1;
+    ca_x = x1 - x3;
+    ca_y = y1 - y3;
+    cb_x = x2 - x3;
+    cb_y = y2 - y3;
+    cd_x = x4 - x3;
+    cd_y = y4 - y3;
+    ac_x_ab = ac_x * ab_y - ac_y * ab_x;
+    ad_x_ab = ad_x * ab_y - ad_y * ab_x;
+    ca_x_cd = ca_x * cd_y - ca_y * cd_x;
+    cb_x_cd = cb_x * cd_y - cb_y * cd_x;
+    if ((ac_x_ab * ad_x_ab < 0) && (ca_x_cd * cb_x_cd < 0))
     {
         return 1;
     }
