@@ -2,8 +2,8 @@
 #include <math.h>
 
 #define OK 0
-#define Floors 9
-#define Flats_per_floor 4
+#define FLOORS 9
+#define FLATS_PER_FLOOR 4
 
 int main(void)
 {
@@ -12,8 +12,8 @@ int main(void)
     printf("Введите номер квартиры:\n");
     scanf("%d", &flat_num);
 
-    int entrance = ((flat_num - 1) / (Floors * Flats_per_floor)) + 1;
-    int floor = ((flat_num - (entrance - 1) * (Floors * Flats_per_floor) - 1) / Flats_per_floor) + 1;
+    int entrance = ((flat_num - 1) / (FLOORS * FLATS_PER_FLOOR)) + 1;
+    int floor = ((flat_num - (entrance - 1) * (FLOORS * FLATS_PER_FLOOR) - 1) / FLATS_PER_FLOOR) + 1;
 
     printf("Номер подъезда = %d \nЭтаж = %d \n", entrance, floor);
 
