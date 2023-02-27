@@ -32,15 +32,14 @@ int main(void)
     double x, eps;
     double func_real, func_eps, abs_err, rel_err;
     
-    printf("Введите x и eps:\n");
     if (scanf("%lf%lf", &x, &eps) != 2)
     {
         printf("Неверный ввод!");
         return ERR_IO;
     }
-    else if (eps <= 0 || eps >= 1 || x >= 1 || x <= -1)
+    else if (eps <= 0 || eps > 1 || x >= 1 || x <= -1)
     {
-        printf("Ввод неверный!");
+        printf("Данные введены неверно!");
         return ERR_WRONG_INPUT;
     }
 
