@@ -13,7 +13,7 @@ int main(void)
 
     scanf("%lf%lf%lf", &a, &b, &phi);
 
-    double s = (a + b) * fabs(a - b ) / 4 * tan((phi * m_pi / 180));
+    double s = (a + b) * fabs(a - b) / 4 * tan((phi * m_pi / 180));
 
     printf("S = %.6f\n", s);
 
