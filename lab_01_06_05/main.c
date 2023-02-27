@@ -29,11 +29,6 @@ int main(void)
         printf("Неверный ввод!");
         return ERR_INCORRECT_INPUT;
     }
-    else if (((fabs(x_p - x_q) < eps) && (fabs(y_p - y_q) < eps)) || ((fabs(x_r - x_s) < eps) && (fabs(y_r - y_s) < eps)))
-    {
-        printf("У одного из отрезков концы имеют одинаковые координаты!\n");
-        return ERR_SAME_DOTS;
-    }
 
     double tmp;
 
