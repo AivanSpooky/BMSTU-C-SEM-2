@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    double m_pi = 3.141592;
+    double m_pi = 3.14159265358979323846264338327950288;
     double a, b;
     double phi;
     
