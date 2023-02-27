@@ -18,7 +18,7 @@ double find_line_coefficients_b(double x1, double y1, double x2, double y2)
 
 int main(void)
 {
-    double eps = 0.0001;
+    double eps = 0.0000000000000000000000000000001;
     double x_p, y_p;
     double x_q, y_q;
     double x_r, y_r;
