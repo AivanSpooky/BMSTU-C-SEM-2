@@ -18,7 +18,7 @@ double find_line_coefficients_b(double x1, double y1, double x2, double y2)
 
 int main(void)
 {
-    double eps = 0.001;
+    double eps = 0.0000001;
     double x_p, y_p;
     double x_q, y_q;
     double x_r, y_r;
@@ -73,29 +73,11 @@ int main(void)
     }
     else if (fabs(x_p - x_q) < eps)
     {
-        if (x_p >= x_r && x_p <= x_s)
-        {
-            printf("0\n");
-            return OK;
-        }
-        else
-        {
-            printf("1\n");
-            return OK;
-        }
+        x_q += eps;
     }
     else if (fabs(x_r - x_s) < eps)
     {
-        if (x_r >= x_p && x_r <= x_q)
-        {
-            printf("0\n");
-            return OK;
-        }
-        else
-        {
-            printf("1\n");
-            return OK;
-        }
+        x_s += eps;
     }
     double k1 = find_line_coefficients_k(x_p, y_p, x_q, y_q);
     double b1 = find_line_coefficients_b(x_p, y_p, x_q, y_q);
@@ -115,7 +97,7 @@ int main(void)
         }
     }
     double x_cross = (b2 - b1) / (k1 - k2);
-    if ((x_cross < x_p && x_cross < x_r) || (x_cross > x_q && x_cross > x_s))
+    if ((x_cross <= x_q && x_cross >= x_p) && (x_cross <= x_s && x_cross >= x_r))
     {
         printf("1\n");
         return OK;
