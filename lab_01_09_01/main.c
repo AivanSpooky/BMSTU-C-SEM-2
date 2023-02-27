@@ -15,12 +15,14 @@ int main(void)
     {
         if (scanf("%lf", &cur_x) != 1)
         {
+            printf("IO error!");
             return ERR_IO;
         }
         else if (cur_x < 0)
         {
             if (n == 1)
             {
+                printf("Wrong input error!");
                 return ERR_WRONG_INPUT;
             }
             break;
