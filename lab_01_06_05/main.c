@@ -59,7 +59,7 @@ int main(void)
     }
     if ((fabs(x_p - x_q) < eps) && (fabs(x_r - x_s) < eps))
     {
-        if (fabs(x_p - x_r) < eps)
+        if ((fabs(x_p - x_r) < eps) && ((y_p <= y_s && y_p >= y_r) || (y_q <= y_s && y_q >= y_r) || (y_r <= y_q && y_r >= y_p) || (y_s <= y_q && y_s >= y_p)))
         {
             printf("1\n");
             return OK;
@@ -84,7 +84,7 @@ int main(void)
     double b2 = find_line_coefficients_b(x_r, y_r, x_s, y_s);
     if (fabs(k1 - k2) < eps)
     {
-        if (fabs(b1 - b2) < eps)
+        if ((fabs(b1 - b2) < eps) && ((x_p <= x_r && x_p <= x_s && x_q >= x_r && x_q >= x_s) || ((x_p <= x_s && x_p >= x_r) || (x_q >= x_r && x_q <= x_s))))
         {
             printf("1\n");
             return OK;
