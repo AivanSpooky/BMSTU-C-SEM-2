@@ -6,16 +6,6 @@
 #define ERR_INCORRECT_INPUT 1
 #define ERR_SAME_DOTS 2
 
-double find_line_coefficients_k(double x1, double y1, double x2, double y2)
-{
-    return (y2 - y1) / (x2 - x1);
-}
-
-double find_line_coefficients_b(double x1, double y1, double x2, double y2)
-{
-    return y1 - (y2 - y1) / (x2 - x1) * x1;
-}
-
 int intersect(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4)
 {
     double ab_x, ab_y, ac_x, ac_y, ad_x, ad_y;
@@ -59,36 +49,6 @@ int main(void)
     {
         printf("У одного из отрезков концы имеют одинаковые координаты!\n");
         return ERR_SAME_DOTS;
-    }
-    if ((fabs(x_p - x_q) < EPS) && (fabs(x_r - x_s) < EPS))
-    {
-        if ((fabs(x_p - x_r) < EPS) && ((y_p <= y_s && y_p >= y_r) || (y_q <= y_s && y_q >= y_r) || (y_r <= y_q && y_r >= y_p) || (y_s <= y_q && y_s >= y_p)))
-        {
-            printf("1\n");
-            return OK;
-        }
-        else
-        {
-            printf("0\n");
-            return OK;
-        }
-    }
-    double k1 = find_line_coefficients_k(x_p, y_p, x_q, y_q);
-    double b1 = find_line_coefficients_b(x_p, y_p, x_q, y_q);
-    double k2 = find_line_coefficients_k(x_r, y_r, x_s, y_s);
-    double b2 = find_line_coefficients_b(x_r, y_r, x_s, y_s);
-    if (fabs(k1 - k2) < EPS)
-    {
-        if ((fabs(b1 - b2) < EPS) && ((x_p <= x_r && x_p <= x_s && x_q >= x_r && x_q >= x_s) || ((x_p <= x_s && x_p >= x_r) || (x_q >= x_r && x_q <= x_s))))
-        {
-            printf("1\n");
-            return OK;
-        }
-        else
-        {
-            printf("0\n");
-            return OK;
-        }
     }
 
     printf("%d", intersect(x_p, y_p, x_q, y_q, x_r, y_r, x_s, y_s));
