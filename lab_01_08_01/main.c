@@ -55,6 +55,7 @@ int main(void)
 	printf("Введите значения 4х байт (в 10-ой):\n");
 	if (scanf("%hhu%hhu%hhu%hhu", &byte1, &byte2, &byte3, &byte4) != 4)
 	{
+		printf("IO error!");
 		return ERR_IO;
 	}
 
