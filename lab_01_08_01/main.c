@@ -25,14 +25,14 @@ void bin_print(uint32_t u)
 
 uint32_t pack(uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4)
 {
-    uint32_t u = b1;
-    u <<= 8;
-    u |= b2;
-    u <<= 8;
-    u |= b3;
-    u <<= 8;
-    u |= b4;
-    return u;
+	uint32_t u = b1;
+	u <<= 8;
+	u |= b2;
+	u <<= 8;
+	u |= b3;
+	u <<= 8;
+	u |= b4;
+	return u;
 }
 
 void unpack_print(uint32_t u)
@@ -41,7 +41,7 @@ void unpack_print(uint32_t u)
 	for (int i = 0; i < bytes; i++)
 	{
 		uint32_t tmp = u;
-		tmp <<= i*8;
+		tmp <<= i * 8;
 		tmp >>= 24;
 		printf("%u", tmp);
 	}
@@ -50,17 +50,17 @@ void unpack_print(uint32_t u)
 
 int main(void)
 {
-    uint8_t byte1, byte2, byte3, byte4;
+	uint8_t byte1, byte2, byte3, byte4;
 
-    printf("Введите значения 4х байт (в 10-ой):\n");
-    if (scanf("%hhu%hhu%hhu%hhu", &byte1, &byte2, &byte3, &byte4) != 4)
-    {
-        return ERR_IO;
-    }
+	printf("Введите значения 4х байт (в 10-ой):\n");
+	if (scanf("%hhu%hhu%hhu%hhu", &byte1, &byte2, &byte3, &byte4) != 4)
+	{
+		return ERR_IO;
+	}
 
-    uint32_t packed_int = pack(byte1, byte2, byte3, byte4);
+	uint32_t packed_int = pack(byte1, byte2, byte3, byte4);
 	bin_print(packed_int);
 	unpack_print(packed_int);
 
-    return OK;
+	return OK;
 }
