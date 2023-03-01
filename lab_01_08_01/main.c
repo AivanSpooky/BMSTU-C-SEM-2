@@ -45,7 +45,7 @@ void unpack_print(uint32_t u)
 		uint32_t tmp = u;
 		tmp <<= i * 8;
 		tmp >>= 24;
-		printf("%" PRIu8 " ", tmp);
+		printf("%" PRIu32 " ", tmp);
 	}
 	printf("\n");
 }
