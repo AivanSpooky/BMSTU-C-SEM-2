@@ -56,7 +56,7 @@ int main(void)
 	printf("Введите значения четырех байт:\n");
 	if (scanf("%" SCNu8 "%" SCNu8 "%" SCNu8 "%" SCNu8,  &byte1, &byte2, &byte3, &byte4) != 4)
 	{
-		printf("IO error!");
+		printf("Error: IO");
 		return ERR_IO;
 	}
 
