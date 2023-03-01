@@ -53,7 +53,8 @@ int main(void)
 	uint8_t byte1, byte2, byte3, byte4;
 
 	printf("Введите значения четырех байт (в 10-ой):\n");
-	if (scanf("%u%u%u%u", &byte1, &byte2, &byte3, &byte4) != 4)
+	if (scanf("%u%u%u%u", &byte1, &byte2, &byte3, &byte4) != 4 ||
+	(byte1 > 255) || (byte2 > 255) || (byte3 > 255) || (byte4 > 255))
 	{
 		printf("IO error!");
 		return ERR_IO;
