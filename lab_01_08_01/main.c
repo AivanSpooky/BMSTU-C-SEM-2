@@ -9,7 +9,7 @@
 
 void bin_print(uint32_t u)
 {
-	printf("BIN: ");
+	printf("Result : ");
 	size_t nbits = sizeof(u) * CHAR_BIT;
 	uint32_t mask = 1 << (nbits - 1);
 	
@@ -38,7 +38,6 @@ uint32_t pack(uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4)
 
 void unpack_print(uint32_t u)
 {
-	printf("BYTES: ");
 	int bytes = 4;
 	for (int i = 0; i < bytes; i++)
 	{
