@@ -52,7 +52,7 @@ int main(void)
 {
 	uint8_t byte1, byte2, byte3, byte4;
 
-	printf("Введите значения 4х байт (в 10-ой):\n");
+	printf("Введите значения четырех байт (в 10-ой):\n");
 	if (scanf("%hhu%hhu%hhu%hhu", &byte1, &byte2, &byte3, &byte4) != 4)
 	{
 		printf("IO error!");
