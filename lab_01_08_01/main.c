@@ -9,7 +9,7 @@
 
 void bin_print(uint32_t u)
 {
-	printf("Result : ");
+	printf("Result: ");
 	size_t nbits = sizeof(u) * CHAR_BIT;
 	uint32_t mask = 1 << (nbits - 1);
 	
