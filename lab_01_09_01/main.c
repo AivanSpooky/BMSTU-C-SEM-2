@@ -13,6 +13,7 @@ int main(void)
     
     while (n > 0)
     {
+        printf("Введите положительный икс (отрицательный - конец ввода): \n");
         if (scanf("%lf", &cur_x) != 1)
         {
             printf("IO error!");

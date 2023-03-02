@@ -40,6 +40,7 @@ int main(void)
     double x_q, y_q;
     double x_r, y_r;
     double x_s, y_s;
+    printf("Введите координаты отрезков PQ и RS (x_p, y_p, x_q, y_q, x_r, y_r, x_s, y_s): \n");
     if (scanf("%lf%lf%lf%lf%lf%lf%lf%lf", &x_p, &y_p, &x_q, &y_q, &x_r, &y_r, &x_s, &y_s) != 8)
     {
         printf("Неверный ввод!");

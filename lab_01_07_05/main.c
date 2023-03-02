@@ -32,6 +32,7 @@ int main(void)
     double x, eps;
     double func_real, func_eps, abs_err, rel_err;
     
+    printf("Введите x и точность: \n");
     if (scanf("%lf%lf", &x, &eps) != 2)
     {
         printf("Неверный ввод!");
