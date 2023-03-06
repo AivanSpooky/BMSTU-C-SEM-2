@@ -6,7 +6,6 @@
 #define OK 0
 #define ERR_IO 1
 #define ERR_RANGE 2
-#define BYTE 8
 
 void bin_print(uint32_t u)
 {
