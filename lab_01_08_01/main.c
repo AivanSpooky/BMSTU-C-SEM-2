@@ -6,6 +6,7 @@
 #define OK 0
 #define ERR_IO 1
 #define ERR_RANGE 2
+#define BYTE 8
 
 void bin_print(uint32_t u)
 {
@@ -27,11 +28,11 @@ void bin_print(uint32_t u)
 uint32_t pack(uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4)
 {
 	uint32_t u = b1;
-	u <<= 8;
+	u <<= CHAR_BIT;
 	u |= b2;
-	u <<= 8;
+	u <<= CHAR_BIT;
 	u |= b3;
-	u <<= 8;
+	u <<= CHAR_BIT;
 	u |= b4;
 	return u;
 }
@@ -42,8 +43,8 @@ void unpack_print(uint32_t u)
 	for (int i = 0; i < bytes; i++)
 	{
 		uint32_t tmp = u;
-		tmp <<= i * 8;
-		tmp >>= 24;
+		tmp <<= i * CHAR_BIT;
+		tmp >>= CHAR_BIT*(bytes-1);
 		printf("%" PRIu32 " ", tmp);
 	}
 	printf("\n");
