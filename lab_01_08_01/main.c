@@ -43,7 +43,7 @@ void unpack_print(uint32_t u)
 	{
 		uint32_t tmp = u;
 		tmp <<= i * CHAR_BIT;
-		tmp >>= CHAR_BIT*(bytes-1);
+		tmp >>= CHAR_BIT * (bytes-1);
 		printf("%" PRIu32 " ", tmp);
 	}
 	printf("\n");
