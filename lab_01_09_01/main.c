@@ -10,7 +10,7 @@ int function(double *sum)
 	double cur_x = 0;
 	int n = 1;
 	printf("Введите положительный икс (отрицательный - конец ввода): \n");
-	if (scanf("%lf", &cur_x) != 1)
+	if (scanf("%lf", &cur_x) == 0)
 	{
 		printf("IO error! \n");
 		return ERR_IO;
