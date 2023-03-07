@@ -10,7 +10,7 @@ int function(double *sum)
 	double cur_x = 0;
 	int n = 1;
 	printf("Введите положительный икс (отрицательный - конец ввода): \n");
-	if (scanf("%lf", &cur_x) == 0)
+	if (scanf("%lf", &cur_x) != 0)
 	{
 		printf("IO error! \n");
 		return ERR_IO;
@@ -23,7 +23,7 @@ int function(double *sum)
 	else
 	{
 		*sum += sqrt(cur_x / n);
-    	n++;
+		n++;
 	}
 	printf("Введите положительный икс (отрицательный - конец ввода): \n");
 	while (scanf("%lf", &cur_x))
@@ -35,23 +35,23 @@ int function(double *sum)
 		}
 		else
 		{
-    		*sum += sqrt(cur_x / n);
-    		n++;
-    	}
+			*sum += sqrt(cur_x / n);
+			n++;
+		}
 	}
 	*sum = sin(*sum);
-    return OK;
+	return OK;
 }
 
 int main(void)
 {
-    double sum = 0;
-    
-    int err_code = function(&sum);
-    if (err_code == 0)
-    {
+	double sum = 0;
+
+	int err_code = function(&sum);
+	if (err_code == 0)
+	{
 		printf("%f\n", sum);
-    }
-    
-    return err_code;
+	}
+
+	return err_code;
 }

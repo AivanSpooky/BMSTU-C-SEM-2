@@ -7,19 +7,21 @@
 
 void print_number(int n)
 {
-	printf("Число N: ");
-	int power_of_ten = 1;
-	while (n / power_of_ten != 0)
-	{
-    	power_of_ten *= 10;
+    printf("Число N: ");
+    int power_of_ten = 1;
+    while (n / power_of_ten != 0)
+    {
+        power_of_ten *= 10;
 	}
 	
-	while (power_of_ten != 1)
-	{
-    	power_of_ten /= 10;
-    	printf("%d ", (n / power_of_ten) % power_of_ten);
-	}
-	printf("\n");
+    while (power_of_ten != 1)
+    {
+        power_of_ten /= 10;
+        //printf("|%d %d|\n", n, power_of_ten);
+        printf("%d ", (n / power_of_ten) % 10);
+        
+    }
+    printf("\n");
 }
 
 int main(void)
