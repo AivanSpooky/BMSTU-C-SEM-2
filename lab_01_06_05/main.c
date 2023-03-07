@@ -6,7 +6,7 @@
 #define ERR_INCORRECT_INPUT 1
 #define ERR_SAME_DOTS 2
 
-double vector_product(double x1, double y1, double x2, double y2)
+double vector_product(double x1, double y2, double y1, double x2)
 {
 	return x1 * y2 - y1 * x2;
 }
