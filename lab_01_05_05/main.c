@@ -7,7 +7,10 @@
 
 void print_number(int n)
 {
-    if (n == 0) return;
+    if (n == 0)
+    {
+        return;
+    }
     int digit = n % 10;
     print_number(n / 10);
     printf("%d", digit);
