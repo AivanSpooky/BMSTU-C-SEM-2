@@ -5,6 +5,23 @@
 #define ERR_IO 1
 #define ERR_NEG 2
 
+void print_number(int n)
+{
+	printf("Число N: ");
+	int power_of_ten = 1;
+	while (n / power_of_ten != 0)
+	{
+    	power_of_ten *= 10;
+	}
+	
+	while (power_of_ten != 1)
+	{
+    	power_of_ten /= 10;
+    	printf("%d ", (n / power_of_ten) % power_of_ten);
+	}
+	printf("\n");
+}
+
 int main(void)
 {
     int n;
@@ -21,19 +38,7 @@ int main(void)
         return ERR_NEG;
     }
 
-    printf("Число N: ");
-    int power_of_ten = 1;
-    while (n / power_of_ten != 0)
-    {
-        power_of_ten *= 10;
-    }
-
-    while (power_of_ten != 1)
-    {
-        power_of_ten /= 10;
-        printf("%d", (n / power_of_ten) % power_of_ten);
-    }
-    printf("\n");
+    print_number(n);
 
     return OK;
 }
