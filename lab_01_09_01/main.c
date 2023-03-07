@@ -25,10 +25,14 @@ int function(double *sum)
 		*sum += sqrt(cur_x / n);
 		n++;
 	}
-	printf("Введите положительный икс (отрицательный - конец ввода): \n");
-	while (scanf("%lf", &cur_x))
+	while (n > 0)
 	{
 		printf("Введите положительный икс (отрицательный - конец ввода): \n");
+		if (scanf("%lf", &cur_x) != 1)
+		{
+			printf("IO error! \n");
+			return ERR_IO;
+		}
 		if (cur_x < 0)
 		{
 			break;

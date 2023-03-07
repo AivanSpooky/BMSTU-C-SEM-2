@@ -7,53 +7,10 @@
 
 void print_number(int n)
 {
-    printf("Число N: ");
-    int power_of_ten = 1;
-    while (n / power_of_ten != 0)
-    {
-        power_of_ten *= 10;
-    }
-
-    while (power_of_ten != 1)
-    {
-        power_of_ten /= 10;
-        //printf("|%d %d|\n", n, power_of_ten);
-        int digit = (n / power_of_ten) % 10;
-        switch (digit)
-        {
-            case 0:
-                printf("0");
-                break;
-            case 1:
-                printf("1");
-                break;
-            case 2:
-                printf("2");
-                break;
-            case 3:
-                printf("3");
-                break;
-            case 4:
-                printf("4");
-                break;
-            case 5:
-                printf("5");
-                break;
-            case 6:
-                printf("6");
-                break;
-            case 7:
-                printf("7");
-                break;
-            case 8:
-                printf("8");
-                break;
-            case 9:
-                printf("9");
-                break;
-        }
-    }
-    printf("\n");
+    if (n == 0) return;
+    int digit = n % 10;
+    print_number(n / 10);
+    printf("%d", digit);
 }
 
 int main(void)
