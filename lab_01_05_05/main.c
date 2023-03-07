@@ -31,7 +31,7 @@ int main(void)
     while (power_of_ten != 1)
     {
         power_of_ten /= 10;
-        printf("%d", (n / power_of_ten) % power_of_ten);
+        printf("%d ", (n / power_of_ten) % power_of_ten);
     }
     printf("\n");
 
