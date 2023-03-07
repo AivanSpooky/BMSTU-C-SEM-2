@@ -5,37 +5,53 @@
 #define ERR_IO 1
 #define ERR_WRONG_INPUT 2
 
+int function(double *sum)
+{
+	double cur_x = 0;
+	int n = 1;
+	printf("Введите положительный икс (отрицательный - конец ввода): \n");
+	if (scanf("%lf", &cur_x) != 1)
+	{
+		printf("IO error! \n");
+		return ERR_IO;
+	}
+	if (cur_x < 0)
+	{
+		printf("Wrong input error! \n");
+		return ERR_WRONG_INPUT;
+	}
+	else
+	{
+		*sum += sqrt(cur_x / n);
+    	n++;
+	}
+	printf("Введите положительный икс (отрицательный - конец ввода): \n");
+	while (scanf("%lf", &cur_x))
+	{
+		printf("Введите положительный икс (отрицательный - конец ввода): \n");
+		if (cur_x < 0)
+		{
+			break;
+		}
+		else
+		{
+    		*sum += sqrt(cur_x / n);
+    		n++;
+    	}
+	}
+	*sum = sin(*sum);
+    return OK;
+}
+
 int main(void)
 {
-    double cur_x = 0;
-    int n = 1;
     double sum = 0;
     
-    while (n > 0)
+    int err_code = function(&sum);
+    if (err_code == 0)
     {
-        printf("Введите положительный икс (отрицательный - конец ввода): \n");
-        if (scanf("%lf", &cur_x) != 1)
-        {
-            printf("IO error!");
-            return ERR_IO;
-        }
-        else if (cur_x < 0)
-        {
-            if (n == 1)
-            {
-                printf("Wrong input error!");
-                return ERR_WRONG_INPUT;
-            }
-            break;
-        }
-        else
-        {
-            sum += sqrt(cur_x / n);
-            n++;
-        }
+		printf("%f\n", sum);
     }
-
-    printf("%f\n", sin(sum));
-
-    return OK;
+    
+    return err_code;
 }

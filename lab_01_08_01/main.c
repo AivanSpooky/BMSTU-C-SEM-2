@@ -24,6 +24,11 @@ void bin_print(uint32_t u)
 	printf(" ");
 }
 
+void unpacked_print(uint8_t u)
+{
+	printf("%" PRIu32 " ", u);
+}
+
 uint32_t pack(uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4)
 {
 	uint32_t u = b1;
@@ -36,17 +41,12 @@ uint32_t pack(uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4)
 	return u;
 }
 
-void unpack_print(uint32_t u)
+uint8_t unpack(uint32_t u, int i, int *bytes)
 {
-	int bytes = 4;
-	for (int i = 0; i < bytes; i++)
-	{
-		uint32_t tmp = u;
-		tmp <<= i * CHAR_BIT;
-		tmp >>= CHAR_BIT * (bytes - 1);
-		printf("%" PRIu32 " ", tmp);
-	}
-	printf("\n");
+	uint32_t tmp = u;
+	tmp <<= i * CHAR_BIT;
+	tmp >>= CHAR_BIT * (*bytes - 1);
+	return tmp;
 }
 
 int main(void)
@@ -62,7 +62,14 @@ int main(void)
 
 	uint32_t packed_int = pack(byte1, byte2, byte3, byte4);
 	bin_print(packed_int);
-	unpack_print(packed_int);
+	
+	int bytes = 4;
+	for (int i = 0; i < bytes; i++)
+	{
+		uint8_t unpacked_byte = unpack(packed_int, i, &bytes);
+		unpacked_print(unpacked_byte);
+	}
+	printf("\n");
 
 	return OK;
 }
