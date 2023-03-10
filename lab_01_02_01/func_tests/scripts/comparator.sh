@@ -9,12 +9,11 @@ f1=$1
 f2=$2
 
 
-mask="[-+]?[0-9]*[.][0-9]*"
+mask="[-+]?[0-9]+[.][0-9]*"
 
 
 clean_out_prog=$(grep -Eo "$mask" "$f1")
 clean_out_test=$(grep -Eo "$mask" "$f2")
-
 
 if [ "$clean_out_prog" != "$clean_out_test" ]; then
     exit 1
