@@ -5,6 +5,8 @@ cd ./func_tests/scripts/ || exit 1
 cd ../../
 
 echo ""
-echo "gcov result:"
-echo ""
-gcov main.c
+echo "Coverage (in %):"
+gcov main.c > "tmp.txt"
+var=$(cat tmp.txt) 
+echo ${var#*:} | sed 's/%*$/ /g' | sed 's/ .*//'
+rm -f "tmp.txt"
