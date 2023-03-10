@@ -7,4 +7,4 @@
 *.gcno
 *.gcda
 *.gcov
-tmp_out.txt
+*tmp_out.txt
