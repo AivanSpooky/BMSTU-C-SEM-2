@@ -27,3 +27,4 @@ if [[ return_code -eq 0 ]]; then
 else
     exit "$fail"
 fi
+rm -f "tmp_out.txt"

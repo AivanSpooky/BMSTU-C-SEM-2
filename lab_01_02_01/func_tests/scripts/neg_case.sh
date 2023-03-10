@@ -18,3 +18,4 @@ if [[ $error -ne 0 ]]; then
 else
     exit 1
 fi
+rm -f "tmp_out.txt"
